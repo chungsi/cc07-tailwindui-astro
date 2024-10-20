@@ -1,18 +1,27 @@
-import pluginJs from "@eslint/js"
+import jseslint from "@eslint/js"
 import eslintPluginAstro from 'eslint-plugin-astro'
 import globals from "globals"
 import tseslint from "typescript-eslint"
 
 
 export default [
+  { files: ["**/*.{js,mjs,cjs,ts}"] },
   { languageOptions: { globals: globals.browser } },
-  pluginJs.configs.recommended,
+  jseslint.configs.recommended,
+  ...tseslint.configs.recommended,
+  ...eslintPluginAstro.configs.recommended,
+  ...eslintPluginAstro.configs['jsx-a11y-recommended'],
   {
-    files: ["**/*.{astro,js,jsx,ts,tsx}"],
-    ...tseslint.configs.recommended,
-    ...eslintPluginAstro.configs.recommended,
-    ...eslintPluginAstro.configs['jsx-a11y-recommended'],
+    // ignores: ["**/*.{config.js,config.mjs,config.cjs}"],
   },
+  // ...tailwind.configs["flat/recommended"],
+  // {
+  //   settings: {
+  //     tailwindcss: {
+  //       callees: ["clsx", "class:list", "class"]
+  //     }
+  //   }
+  // },
   {
     rules: {
       // override/add rules settings here, such as:

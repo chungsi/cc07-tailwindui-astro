@@ -1,19 +1,34 @@
 ---
+import ProductGrid from '@/components/ProductGrid.astro'
 import '@styles/global.css'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>CC07 / TailwindUI & Astro</title>
-	</head>
-	<body>
-		<main class='p-4'>
-			<h1 class='font-mono'>CC07 / TailwindUI & Astro</h1>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link
+      rel='icon'
+      type='image/svg+xml'
+      href='/favicon.svg'
+    />
+    <meta
+      name='viewport'
+      content='width=device-width'
+    />
+    <meta
+      name='generator'
+      content={Astro.generator}
+    />
+    <title>CC07 / TailwindUI & Astro</title>
+  </head>
+  <body class='bg-th-beige-50'>
+    <main class='p-4'>
+      <h1>
+        <span class='font-display text-[10rem]'>07</span> /
+        <span class='font-mono'>TailwindUI & Astro</span>
+      </h1>
 
-		</main>
-	</body>
+      <ProductGrid />
+    </main>
+  </body>
 </html>

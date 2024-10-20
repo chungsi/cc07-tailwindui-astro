@@ -1,0 +1,6 @@
+{
+  "name": "Survival Burger",
+  "description": "A convenient snack for the explorer.",
+  "price": 180,
+  "image": "./survival_burger.png"
+}

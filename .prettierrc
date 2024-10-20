@@ -3,18 +3,30 @@
   "jsxSingleQuote": true,
   "trailingComma": "all",
   "semi": false,
-  "printWidth": 120,
+  "printWidth": 100,
   "tabWidth": 2,
   "useTabs": false,
   "singleAttributePerLine": true,
   "plugins": [
-    "prettier-plugin-astro"
+    "prettier-plugin-astro",
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindAttributes": [
+    "class:list",
+    "class"
+  ],
+  "tailwindFunctions": [
+    "clsx"
   ],
   "overrides": [
     {
       "files": "*.astro",
       "options": {
-        "parser": "astro"
+        "parser": "astro",
+        "semi": false,
+        "singleQuote": true,
+        "jsxSingleQuote": true,
+        "trailingComma": "all"
       }
     }
   ]

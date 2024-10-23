@@ -5,15 +5,12 @@ import tseslint from "typescript-eslint"
 
 
 export default [
-  { files: ["**/*.{js,mjs,cjs,ts}"] },
+  { files: ["**/*.{js,mjs,cjs,ts,astro}"] },
   { languageOptions: { globals: globals.browser } },
   jseslint.configs.recommended,
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   ...eslintPluginAstro.configs['jsx-a11y-recommended'],
-  {
-    // ignores: ["**/*.{config.js,config.mjs,config.cjs}"],
-  },
   // ...tailwind.configs["flat/recommended"],
   // {
   //   settings: {

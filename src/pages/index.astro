@@ -1,5 +1,5 @@
 ---
-import ProductGrid from '@/components/ProductGrid.astro'
+import HotBar from '@/components/HotBar.astro'
 import '@styles/global.css'
 ---
 
@@ -21,14 +21,120 @@ import '@styles/global.css'
     />
     <title>CC07 / TailwindUI & Astro</title>
   </head>
-  <body class='bg-th-beige-50'>
-    <main class='p-4'>
-      <h1 class='font-mono'>
-        <span class='text-8xl'>07</span> /
-        <span>TailwindUI & Astro</span>
-      </h1>
+  <body class='ui-grid mx-24 h-screen items-center bg-th-beige-50 p-4'>
+    <div class='bg'>
+      <div class='draw-grid dots'></div>
+    </div>
 
-      <ProductGrid />
+    <header
+      class:list={[
+        'rounded-lg border border-orange-400 bg-amber-100 p-2',
+        'shadow-solid-sm shadow-solid shadow-orange-500',
+        'flex gap-2',
+        'ui-infobar',
+      ]}
+    >
+      <p class='inline-flex items-center gap-1 rounded-xl bg-orange-600 p-2 text-3xl shadow-sm'>
+        <span class='text-4xl text-white'>LV.</span>
+        <span class='inline-block rounded-lg bg-amber-300 px-1 py-1 text-orange-600'>0</span>
+        <span class='inline-block rounded-lg bg-amber-300 px-1 py-1 text-orange-600'>7</span>
+      </p>
+      <section
+        class:list={[
+          'w-full rounded-md border border-orange-400 px-2 py-1 shadow-sm',
+          'grid grid-cols-3 gap-2',
+        ]}
+      >
+        <article class='flex flex-col items-stretch'>
+          <p>
+            <span class='text-sm font-bold uppercase'>Oct</span>
+            <span class='text-xs font-light'>[10/12]</span>
+          </p>
+          <div class='relative h-full min-h-4 min-w-fit rounded-md border border-orange-400'>
+            <span
+              class='absolute z-0 block h-full w-5/6 rounded-s-md border-t-2 border-white bg-orange-500'
+            ></span>
+            <div class='z-1 relative grid h-1/4 translate-y-[300%] grid-cols-12 border-amber-100'>
+              <span class='border-r-2 border-amber-300'></span>
+              <span class='border-r-2 border-amber-300'></span>
+              <span class='border-r-2 border-amber-300'></span>
+              <span class='border-r-2 border-amber-300'></span>
+              <span class='border-r-2 border-amber-300'></span>
+              <span class='border-r-2 border-amber-300'></span>
+              <span class='border-r-2 border-amber-300'></span>
+              <span class='border-r-2 border-amber-300'></span>
+              <span class='border-r-2 border-amber-300'></span>
+              <span class='border-r-2 border-amber-300'></span>
+              <span class='border-r-2 border-amber-300'></span>
+            </div>
+          </div>
+        </article>
+        <h1 class='text-md text-sm text-orange-950'>
+          <span>TailwindUI & Astro</span>
+        </h1>
+      </section>
+    </header>
+
+    <main class='ui-inventory'>
+      <!-- <ProductGrid /> -->
+      <HotBar />
     </main>
   </body>
 </html>
+
+<style is:global>
+  :root {
+    --gap: 2vw;
+    --display-offset: var(--gap);
+  }
+
+  .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    .draw-grid {
+      --dot-color: theme(colors.amber.400);
+
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 120%;
+      height: 120%;
+
+      &.dots {
+        --size: max(var(--gap), 1rem);
+        --display-offset: calc(var(--gap) / -2);
+
+        top: var(--display-offset);
+        left: var(--display-offset);
+        background: repeat radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
+        background-size: var(--size) var(--size);
+      }
+    }
+  }
+
+  .ui-grid {
+    display: grid;
+    gap: 3vw;
+    grid-template:
+      'i i i'
+      'h h h';
+  }
+
+  .ui-infobar {
+    grid-area: h;
+  }
+
+  .ui-inventory {
+    grid-area: i;
+  }
+
+  .ui-person {
+    grid-area: a;
+  }
+</style>

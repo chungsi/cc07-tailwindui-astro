@@ -5,24 +5,11 @@ import tseslint from "typescript-eslint"
 
 
 export default [
-  { files: ["**/*.{js,mjs,cjs,ts,astro}"] },
+  { files: [ "**/*.{js,mjs,cjs,ts,tsx,astro}" ] },
   { languageOptions: { globals: globals.browser } },
   jseslint.configs.recommended,
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
-  ...eslintPluginAstro.configs['jsx-a11y-recommended'],
+  ...eslintPluginAstro.configs[ 'jsx-a11y-recommended' ],
   // ...tailwind.configs["flat/recommended"],
-  // {
-  //   settings: {
-  //     tailwindcss: {
-  //       callees: ["clsx", "class:list", "class"]
-  //     }
-  //   }
-  // },
-  {
-    rules: {
-      // override/add rules settings here, such as:
-      // "astro/no-set-html-directive": "error"
-    }
-  }
 ]

@@ -1,0 +1,23 @@
+---
+import drawfImage from '@/assets/dwarf.png'
+import type { HTMLAttributes } from 'astro/types'
+
+type Props = HTMLAttributes<'section'>
+
+const { class: className, ...attrs } = Astro.props
+---
+
+<section
+  {...attrs}
+  class:list={[
+    className,
+    'rounded-2xl border border-orange-400 bg-amber-100 p-2 pb-0',
+    'grid gap-2',
+    'shadow-solid-sm shadow-solid shadow-orange-500',
+  ]}
+>
+  <img
+    src={drawfImage.src}
+    alt=''
+  />
+</section>

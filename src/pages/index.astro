@@ -23,112 +23,104 @@ import '@styles/global.css'
     />
     <title>CC07 / TailwindUI & Astro</title>
   </head>
-  <body class='ui-grid mx-24 h-screen max-h-screen items-center bg-th-beige-50 p-8'>
+  <body class='mx-auto h-screen max-h-screen max-w-4xl items-center bg-th-beige-50 p-8 py-12'>
     <div class='bg'>
       <div class='draw-grid dots'></div>
     </div>
-
-    <header
-      class:list={[
-        'rounded-lg border border-orange-400 bg-amber-100 p-2',
-        'shadow-solid-sm shadow-solid shadow-orange-500',
-        'flex gap-2',
-        'ui-infobar',
-      ]}
-    >
-      <p class='inline-flex items-center gap-1 rounded-xl bg-orange-600 p-2 text-3xl shadow-sm'>
-        <span class='text-4xl text-white'>LV.</span>
-        <span class='inline-block rounded-lg bg-amber-300 px-1 py-1 text-orange-600'>0</span>
-        <span class='inline-block rounded-lg bg-amber-300 px-1 py-1 text-orange-600'>7</span>
-      </p>
-      <section
+    <main class='ui-grid'>
+      <header
         class:list={[
-          'w-full rounded-md border border-orange-400 px-2 py-1 shadow-sm',
-          'grid grid-cols-3 gap-2',
+          'rounded-lg border border-orange-400 bg-amber-100 p-2',
+          'shadow-solid-sm shadow-solid shadow-orange-500',
+          'flex gap-2',
+          'ui-infobar',
         ]}
       >
-        <article class='flex flex-col items-stretch'>
-          <p class='leading-[1lh]'>
-            <span class='text-sm font-bold uppercase'>Oct</span>
-            <span class='text-xs font-light'>[10/12]</span>
-          </p>
-          <div
-            class='relative h-[1lh] h-full min-h-4 min-w-fit rounded-md border border-orange-400'
-          >
-            <span
-              class='absolute z-0 block h-full w-5/6 rounded-s-md border-t-2 border-white bg-orange-500'
-            ></span>
-            <div class='z-1 relative grid h-1/4 translate-y-[300%] grid-cols-12 border-amber-100'>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
+        <p class='inline-flex items-center gap-1 rounded-xl bg-orange-600 p-2 text-3xl shadow-sm'>
+          <span class='text-4xl text-white'>LV.</span>
+          <span class='inline-block rounded-lg bg-amber-300 px-1 py-1 text-orange-600'>0</span>
+          <span class='inline-block rounded-lg bg-amber-300 px-1 py-1 text-orange-600'>7</span>
+        </p>
+        <section
+          class:list={[
+            'w-full rounded-md border border-orange-400 px-2 py-1 shadow-sm',
+            'grid grid-cols-3 gap-2',
+          ]}
+        >
+          <article class='flex flex-col items-stretch'>
+            <p class='leading-[1lh]'>
+              <span class='text-sm font-bold uppercase'>Oct</span>
+              <span class='text-xs font-light'>[10/12]</span>
+            </p>
+            <div class='relative h-[1lh] min-h-4 min-w-fit rounded-md border border-orange-400'>
+              <span
+                class='absolute z-0 block h-full w-5/6 rounded-s-md border-t-2 border-white bg-orange-500'
+              ></span>
+              <div class='z-1 relative grid h-1/4 translate-y-[300%] grid-cols-12 border-amber-100'>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+              </div>
             </div>
-          </div>
-        </article>
-        <article class='flex flex-col items-stretch'>
-          <h1 class='text-sm leading-[1lh] text-orange-950'>
-            <span class='font-bold uppercase'>Tailwind UI</span>
-            <span class='text-xs font-light'>[+Astro]</span>
-          </h1>
-          <div
-            class='relative h-[1lh] h-full min-h-4 min-w-fit rounded-md border border-orange-400 text-orange-500'
-          >
-            <span
-              class='absolute z-0 block h-full w-1/5 rounded-s-md border-t-2 border-white bg-orange-500'
-            ></span>
+          </article>
+          <article class='flex flex-col items-stretch'>
+            <h1 class='text-sm leading-[1lh] text-orange-950'>
+              <span class='font-bold uppercase'>Tailwind UI</span>
+              <span class='text-xs font-light'>[+Astro]</span>
+            </h1>
             <div
-              class='z-1 relative grid translate-y-1 grid-cols-12 border-amber-100 text-amber-300'
+              class='relative h-[1lh] min-h-4 rounded-md border border-orange-400 text-orange-500'
             >
-              ????????????
+              <span
+                class:list={[
+                  'absolute z-0 block h-full w-1/5 rounded-s-md border-t-2 border-white bg-orange-500',
+                ]}></span>
+              <div
+                class='z-1 relative w-full translate-y-1 overflow-hidden border-amber-100 text-amber-300'
+              >
+                ?????????????????????
+              </div>
             </div>
-            <!-- <img
-              class='h-6 w-auto'
-              src='https://tailwindui.com/plus/img/logos/mark.svg?color=orange&shade=500'
-              alt=''
-            /> -->
-            <!-- <StarIcon className='h-6 w-auto' /> -->
-          </div>
-        </article>
-        <article class='flex flex-col items-stretch'>
-          <p class='leading-[1lh]'>
-            <span class='text-sm font-bold uppercase'>Exp.</span>
-            <span class='text-xs font-light'>348 [51%]</span>
-          </p>
-          <div
-            class='relative h-[1lh] h-full min-h-4 min-w-fit rounded-md border border-orange-400'
-          >
-            <span
-              class='absolute z-0 block h-full w-1/2 rounded-s-md border-t-2 border-white bg-orange-500'
-            ></span>
-            <div class='z-1 relative grid h-1/4 translate-y-[300%] grid-cols-12 border-amber-100'>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
-              <span class='border-r-2 border-amber-300'></span>
+          </article>
+          <article class='flex flex-col items-stretch'>
+            <p class='leading-[1lh]'>
+              <span class='text-sm font-bold uppercase'>Exp.</span>
+              <span class='text-xs font-light'>348 [51%]</span>
+            </p>
+            <div class='relative h-[1lh] min-h-4 min-w-fit rounded-md border border-orange-400'>
+              <span
+                class='absolute z-0 block h-full w-1/2 rounded-s-md border-t-2 border-white bg-orange-500'
+              ></span>
+              <div class='z-1 relative grid h-1/4 translate-y-[300%] grid-cols-12 border-amber-100'>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+                <span class='border-r-2 border-amber-300'></span>
+              </div>
             </div>
-          </div>
-        </article>
-      </section>
-    </header>
+          </article>
+        </section>
+      </header>
 
-    <ShopKeep class='ui-person' />
-    <ProductGrid class='ui-inventory' />
-    <HotBar class='ui-hotbar' />
+      <ShopKeep class='ui-person self-end' />
+      <ProductGrid class='ui-inventory' />
+      <HotBar class='ui-hotbar' />
+    </main>
   </body>
 </html>
 
@@ -173,11 +165,20 @@ import '@styles/global.css'
     display: grid;
     gap: 3vw;
     grid-template:
-      'a i i' 3fr
-      'h h h' auto
-      'f f f' auto
+      'a a a' max-content
+      'i i i' max-content
+      'h h h' max-content
+      'f f f' max-content
       / 1fr 1fr 1fr;
     height: 100lvh;
+
+    @screen md {
+      grid-template:
+        'i i a' max-content
+        'h h h' max-content
+        'f f f' max-content
+        / 1fr 1fr 1fr;
+    }
   }
 
   .ui-infobar {

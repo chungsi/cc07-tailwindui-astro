@@ -9,15 +9,37 @@ const { class: className, ...attrs } = Astro.props
 
 <section
   {...attrs}
-  class:list={[
-    className,
-    'rounded-2xl border border-orange-400 bg-amber-100 p-2 pb-0',
-    'grid gap-2',
-    'shadow-solid-sm shadow-solid shadow-orange-500',
-  ]}
+  class:list={[className, '@container']}
 >
-  <img
-    src={drawfImage.src}
-    alt=''
-  />
+  <div class='grid grid-cols-1 gap-4 @sm:grid-cols-3'>
+    <section
+      class:list={[
+        'relative z-10 rounded-lg bg-orange-600 p-4 pt-3 text-sm font-semibold text-white',
+        'shadow-solid-sm shadow-solid shadow-orange-700',
+        '@sm:col-span-2',
+      ]}
+    >
+      <p class='mb-3 inline-block rounded-md bg-amber-300 px-2 text-orange-600'>???</p>
+      <p>You sure you want to get that?</p>
+      <span
+        class:list={[
+          'h-0 w-0 border-[.75rem] border-orange-600 border-b-transparent border-l-transparent border-r-transparent',
+          'absolute bottom-0 left-4 translate-y-full',
+          'block @sm:hidden',
+        ]}></span>
+    </section>
+    <section
+      class:list={[
+        'shadow-solid-sm rounded-2xl border border-orange-400 bg-amber-100 p-2 shadow-solid shadow-orange-500',
+        'grid gap-2 @sm:col-span-1',
+      ]}
+    >
+      <section class:list={['p-2 pb-0', 'rounded-xl border border-orange-400 bg-orange-600']}>
+        <img
+          src={drawfImage.src}
+          alt=''
+        />
+      </section>
+    </section>
+  </div>
 </section>

@@ -15,71 +15,79 @@ const allCooking: CollectionEntry<'cooking'>[] = await getCollection('cooking')
 >
   <div
     class:list={[
-      'rounded-2xl border border-orange-400 bg-amber-100 p-4 pb-8',
-      'grid grid-cols-2 gap-3',
+      'relative rounded-2xl border border-orange-400 bg-amber-100 p-4 pb-8',
       'shadow-solid-sm shadow-solid shadow-orange-500',
     ]}
   >
     <h2
       class:list={[
-        'col-span-full rounded-md border border-orange-400 bg-th-beige-50 p-2 shadow-sm',
+        // 'fixed mt-4 w-full',
+        'rounded-md border border-orange-400 bg-th-beige-50 p-2 shadow-sm',
         'text-xs font-bold uppercase text-orange-950',
       ]}
     >
-      What would you like?
+      All the Yummy Food
     </h2>
-    {
-      allCooking.map((item) => (
-        <section
-          class:list={[
-            'group relative grid grid-cols-3 gap-1',
-            // 'hover:cursor-pointer',
-            'rounded-md ring-orange-500 transition-all focus-within:bg-orange-500 focus-within:ring-4',
-          ]}
-        >
-          <div class='col-span-1 h-full content-center rounded-md border border-orange-400 bg-amber-100 p-4 shadow-sm'>
-            <img
-              src={item.data.image.src}
-              alt={item.data.name}
-              class='mx-auto aspect-1 h-auto w-12 object-center'
-            />
-          </div>
-          <div
+    <div
+      class:list={[
+        'relative h-full overflow-y-scroll [scrollbar-color:darkorange_#fffaeb] @md:overflow-auto',
+        'grid max-h-[38rem] grid-cols-1 gap-3 @md:grid-cols-2',
+        'mt-4 border-b border-orange-400 pb-2 pr-1 @md:border-none',
+      ]}
+    >
+      {
+        allCooking.map((item) => (
+          <section
             class:list={[
-              'col-span-2 rounded-md border border-orange-400 bg-amber-100 p-2',
-              'flex flex-col',
+              'group relative grid grid-cols-3 gap-1',
+              // 'hover:cursor-pointer',
+              'rounded-md ring-orange-500 transition-all focus-within:bg-orange-500 focus-within:ring-4',
             ]}
           >
-            <h3 class='mb-1 mt-auto text-sm font-bold'>{item.data.name}</h3>
-            <hr class='border-t-2 border-dotted border-orange-400' />
-            {/* <p class='text-xs italic'>{item.data.description}</p> */}
-            <section class='mt-2 flex flex-row justify-between'>
-              <p class='text-xs font-medium'>{item.data.price}g</p>
-              <button
-                class:list={[
-                  'inline-block aspect-1 size-5 content-center rounded-[.25rem] bg-orange-500 font-semibold text-white',
-                  'focus-visible:outline-2 focus-visible:outline-orange-900 focus-visible:ring-4 focus-visible:ring-orange-800',
-                  'hover:outline-2 hover:outline-orange-900 hover:ring-4 hover:ring-orange-800',
-                ]}
-              >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 24 24'
-                  fill='currentColor'
-                  class='mx-auto size-4'
+            <div class='col-span-1 h-full content-center rounded-md border border-orange-400 bg-amber-100 p-4 shadow-sm'>
+              <img
+                src={item.data.image.src}
+                alt={item.data.name}
+                class='mx-auto aspect-1 h-auto w-12 object-center'
+              />
+            </div>
+            <div
+              class:list={[
+                'col-span-2 rounded-md border border-orange-400 bg-amber-100 p-2',
+                'flex flex-col',
+              ]}
+            >
+              <h3 class='mb-1 mt-auto text-sm font-bold'>{item.data.name}</h3>
+              <hr class='border-t-2 border-dotted border-orange-400' />
+              {/* <p class='text-xs italic'>{item.data.description}</p> */}
+              <section class='mt-2 flex flex-row justify-between'>
+                <p class='text-xs font-medium'>{item.data.price}g</p>
+                <button
+                  class:list={[
+                    'inline-block aspect-1 size-5 content-center rounded-[.25rem] bg-orange-500 font-semibold text-white',
+                    'focus-visible:outline-2 focus-visible:outline-orange-900 focus-visible:ring-4 focus-visible:ring-orange-800',
+                    'hover:outline-2 hover:outline-orange-900 hover:ring-4 hover:ring-orange-800',
+                  ]}
                 >
-                  <path
-                    fill-rule='evenodd'
-                    d='M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z'
-                    clip-rule='evenodd'
-                  />
-                </svg>
-              </button>
-            </section>
-          </div>
-        </section>
-      ))
-    }
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    viewBox='0 0 24 24'
+                    fill='currentColor'
+                    class='mx-auto size-4'
+                  >
+                    <path
+                      fill-rule='evenodd'
+                      d='M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z'
+                      clip-rule='evenodd'
+                    />
+                  </svg>
+                </button>
+              </section>
+            </div>
+          </section>
+        ))
+      }
+    </div>
   </div>
 </article>
 
